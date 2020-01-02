@@ -1,0 +1,163 @@
+  header {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12;
+    color: white !important;
+    background-color: #6b0510;
+    text-align: center;
+  }
+
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color:white;
+  }
+  
+  footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+  .Start {
+    background-image: url("color-2174045_1280.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: black;
+    padding-bottom: 200px;
+    text-align: center; 
+    padding-top: 70px;
+    /* zoom: 2; */
+  }
+
+  .text1 {  
+      font: 25px arial, !important;   
+      text-align: center;
+      font-family: sans-serif;          
+  }
+
+  .text2 {
+     
+      font: 25px arial !important;
+      font-family: sans-serif;   
+      text-align: center;
+      
+  }
+
+  .text3 {  
+      font: 25px arial !important;
+      font-family: sans-serif;   
+      text-align: center;
+      
+      
+  }
+
+  /* .Unternehmen4 {
+    margin-top: -20px;
+    margin-bottom: 13em !important;
+    margin-left: 1em;
+  } */
+
+
+  .text4 {  
+      font: 25px arial !important;
+      font-family: sans-serif;   
+      text-align: center;
+      
+      
+  }
+
+  /* .Unternehmen5 {
+    margin-top: -20px;
+    margin-bottom: 14em !important;
+    margin-left: 1em;
+  } */
+
+  .text5 {  
+      font: 25px arial !important;
+      font-family: sans-serif;   
+      text-align: center;
+      
+      
+  }
+
+  /* .Unternehmen6 {
+    margin-top: -20px;
+    margin-bottom: 14em !important;
+    margin-left: 1em;
+  } */
+
+  .text6 {  
+      font: 25px arial !important;
+      font-family: sans-serif;   
+      text-align: center;
+      
+      
+  }
+
+
+  .text7 {  
+      font: 25px arial !important;
+      font-family: sans-serif;   
+      text-align: center;
+      
+      
+  }
+
+  .text8 {  
+      font: 25px arial !important;
+      font-family: sans-serif;   
+      text-align: center;
+      
+      
+  }
+
+
+  .dot {
+    height: 200px;
+    width: 200px;
+    border: 3px solid rgba(0,0,0,0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer !important;
+  }
+
+  #button1 {
+      background-color: rgb(235, 120, 67);
+      border-color: rgb(206, 91, 14);
+      border-radius: 40px 40px 40px 40px;
+  }
+
+  a {text-decoration: none;
+    cursor: pointer;} 
+
+.unternehmensform {
+  margin-top: 50px;
+  margin-bottom: 120px;
+}
+.unternehmensform:last-of-type {
+  margin-bottom: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text01 {
+  font-size: 11;
+}
+
+.trennung {
+  margin-bottom: 70px !important;
+}
+.trennung:last-of-type {
+  margin-bottom: -20px;
+}
