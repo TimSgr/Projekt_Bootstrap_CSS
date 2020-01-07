@@ -58,13 +58,6 @@ body {
       
   }
 
-  /* .Unternehmen4 {
-    margin-top: -20px;
-    margin-bottom: 13em !important;
-    margin-left: 1em;
-  } */
-
-
   .text4 {  
       font: 25px arial !important;
       font-family: sans-serif;   
@@ -72,13 +65,6 @@ body {
       
       
   }
-
-  /* .Unternehmen5 {
-    margin-top: -20px;
-    margin-bottom: 14em !important;
-    margin-left: 1em;
-  } */
-
   .text5 {  
       font: 25px arial !important;
       font-family: sans-serif;   
@@ -86,13 +72,6 @@ body {
       
       
   }
-
-  /* .Unternehmen6 {
-    margin-top: -20px;
-    margin-bottom: 14em !important;
-    margin-left: 1em;
-  } */
-
   .text6 {  
       font: 25px arial !important;
       font-family: sans-serif;   
@@ -122,8 +101,8 @@ body {
   .dot {
     height: 200px;
     width: 200px;
-    border: 3px solid rgba(0,0,0,0.4);
     border-radius: 50%;
+    border: 3px solid rgba(0,0,0,0.4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,6 +122,22 @@ body {
   margin-top: 50px;
   margin-bottom: 120px;
 }
+
+.unternehmensform:last-of-type {
+  margin-bottom: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.unternehmensform:last-of-type {
+margin-bottom: 0;
+}
+
+.pointer {
+cursor: pointer;
+}
 .unternehmensform:last-of-type {
   margin-bottom: 0;
 }
@@ -161,3 +156,18 @@ body {
 .trennung:last-of-type {
   margin-bottom: -20px;
 }
+.button001 {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.daten {
+  padding-left: 50px !important;
+  padding-top: 50px !important;
+}
+#button01{
+  height: 70px;
+  width: 250px;
+}
+
