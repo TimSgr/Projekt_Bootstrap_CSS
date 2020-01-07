@@ -97,6 +97,10 @@ body {
       
   }
 
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .dot {
     height: 200px;
