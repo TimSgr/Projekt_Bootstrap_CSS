@@ -15,5 +15,5 @@
 <div class = "Start">   
     <h1> This Is A Page About</h1>
     <h2>  Different forms Of Companies In Germany</h2>
-    <a href="unternehmensstrukturen.html" id="button1" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">More Information</a>
+    <a href="overview.php" id="button1" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">More Information</a>
 </div> 

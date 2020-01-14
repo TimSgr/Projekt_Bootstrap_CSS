@@ -15,7 +15,7 @@ include "header.php";
 
          <div class='row d-flex unternehmensform'>
              <div class='d-flex justify-content-center align-items-center circle order-0 col-md-4'>
-                <div class="dot" onclick="javascript:location.href='<?php echo $dsatz["short_form"]?>.php'"><?php echo $dsatz["short_form"]?></div>
+                <a href="singleview.php"><div class="dot"> <?php echo $dsatz["short_form"]?></div></a>
              </div>
              <div class="description order-1 col-8 text01">
                  <p class='font-weight-bold'> <?php echo $dsatz["name"]?> </p>
@@ -23,28 +23,27 @@ include "header.php";
              </div>   
          </div>
          
-        <div class="row d-flex unternehmensform flex-column-reverse flex-lg-row">
-            <div class="d-flex justify-content-center align-items-center circle order-1 col-md-4 col-md-12 col-lg-6 col-xl-5">
-                <div class="dot" onclick="javascript:location.href='ag.html'"><?php echo $dsatz["short_form"]?></div>
-            </div>        
-            <div class="description order-0 col-8 col-md-12 col-lg-6 col-xl-7">
-                <p class='font-weight-bold'> <?php echo $dsatz["name"]?> </p>
-                <?php echo $dsatz["description"] ?>
-            </div>   
-        </div>
-
-
-
 <?php
 }
 ?>
-<p> 
-    <center>
-        <button type="button" class="btn btn-info" onclick="javascript:location.href='neu1.php'"> Eigene Unternehmensform hinzufügen </button>
-    </center>
-</p>
-    
+        <!-- <div class="row d-flex unternehmensform flex-column-reverse flex-lg-row">
+            <div class="d-flex justify-content-center align-items-center circle order-1 col-md-4 col-md-12 col-lg-6 col-xl-5">
+                <div class="dot" onclick="javascript:location.href='ag.html'"><?php //echo $dsatz["short_form"]?></div>
+            </div>        
+            <div class="description order-0 col-8 col-md-12 col-lg-6 col-xl-7">
+                <p class='font-weight-bold'> <?php // echo $dsatz["name"]?> 
+                <?php //echo $dsatz["description"] ?>
+            </div>   
+        </div> -->
 
+
+
+<div class="d-flex justify-content-center">
+        <p><a href="add.php"><button type="button" class="btn btn-info"> Eigene Unternehmensform hinzufügen </button></a>
+</div>
+<div class="d-flex justify-content-center">
+        <p><a href="manage.php"><button type="button" class="btn btn-info"> Zur Verwaltungsansicht </button></a></p>
+</div>
 <?php
 include "footer.php";
 ?>

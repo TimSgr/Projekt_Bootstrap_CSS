@@ -34,34 +34,45 @@ function create_table_if_not_exists(mysqli $con) {
 function get_all(mysqli $con) {
     $res = mysqli_query($con,"SELECT * FROM Unternehmensform");
     $num = mysqli_num_rows($res);
-    if($num > 0) echo "Folgende Datensätze wurden gefunden: <br>";
+    if($num > 0) {
+        echo "Folgende Datensätze wurden gefunden: <br>";
+    }
     else echo "Keine Datensätze gefunden <br>";
     return $res;
 }
 
-function get_single(mysqli $con, $id) {
-    $sql = "SELECT * FROM Unternehmensform WHERE id = $id";
+function get_single(mysqli $con) {
+    $sql = "SELECT * FROM Unternehmensform WHERE id = "
+    .$_POST["auswahl"];
     var_dump($sql);
     $res = mysqli_query($con, $sql);
     $dsatz = mysqli_fetch_assoc($res);
+    return $dsatz;
     // $res = mysqli_query($con, $sql);
     // $dsatz = mysqli_fetch_assoc($res);
 }
 
 function delete(mysqli $con) {
 
-
+    $sql = "DELETE FROM Unternehmensform WHERE id = "
+    ."'".$_POST["auswahl"]."'";
+    var_dump($sql);
+    mysqli_query($con,$sql);
 
 }
 
-function update(mysqli $con) {
+function update(mysqli $con, $na, $abk, $des, $id, $selected) {
 
-
+    $sql = "UPDATE Unternehmensform SET id = '$id', name= '$na' , ".
+    "short_form= '$abk', description='$des'".
+    "WHERE id = '$selected'";
+    var_dump($sql);
+    mysqli_query($con,$sql);
 
 }
 
 function add(mysqli $con, $name, $short_form, $description) {
-    $sql = "INSERT INTO Unternehmensform (name, short_form, description)"
+    $sql = "INSERT INTO Unternehmensform (id, name, short_form, description)"
     . " VALUES('$name', '$short_form', '$description')";
     mysqli_query($con, $sql);
 

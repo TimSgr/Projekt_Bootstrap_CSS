@@ -125,6 +125,7 @@ body {
 .unternehmensform {
   margin-top: 50px;
   margin-bottom: 120px;
+  border: 3px solid rgba(0,0,0,0.4);
 }
 
 .unternehmensform:last-of-type {
@@ -156,6 +157,7 @@ cursor: pointer;
 
 .trennung {
   margin-bottom: 70px !important;
+  border: 3px solid rgba(0,0,0,0.4);
 }
 .trennung:last-of-type {
   margin-bottom: -20px;
@@ -174,4 +176,6 @@ cursor: pointer;
   height: 70px;
   width: 250px;
 }
-
+.abstand {
+  padding-bottom: 110px !important;
+}

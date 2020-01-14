@@ -16,23 +16,38 @@ create_table_if_not_exists($con);
 <body>
 <form action="manage.php" method="post">    
 <?php
-if(isset($_POST['id'])) {
-   $_POST["id"] = $id;
-   get_single($con, $id);
+if(isset($_POST["submit"])) {
 
+   get_single($con);
+   $dsatz=get_single($con);
    echo "<br><input name='id' value='" .$dsatz["id"].
    "'> ID <br> ";
-   echo "<br><input name='name' value='" .$dsatz["name"].
+   echo "<br><input name='na' value='" .$dsatz["name"].
    "'> Name der Rechtsform <br> ";
-    echo "<br><input name='short_form' value='" .$dsatz["short_form"].
+    echo "<br><input name='abk' value='" .$dsatz["short_form"].
     "'> Abkürzung <br> ";
-    echo "<br><input name='description' value='" .$dsatz["description"].
+    echo "<br><input name='des' value='" .$dsatz["description"].
     "'> Beschreibung <br> ";
-    echo "<br><input type='hidden' name ='oripn' value='" 
-    . $_POST["id"] . "'> ";
-    echo "<input type='submit' value='speichern'>";
+    echo "<br><input type='hidden' name ='selected' value='" 
+    . $_POST["auswahl"] . "'> ";
+    echo "<input type='submit' value='speichern' name='speichern'>";
     echo "<input type='reset'><br>";
-
+}
+else if(isset($_POST["speichern"]))
+{
+    $na = $_POST["na"];
+    $abk = $_POST["abk"];
+    $des = $_POST["des"];
+    $id = $_POST["id"];
+    $selected = $_POST["selected"];
+    update($con, $na, $abk, $des,$id, $selected);
+    echo "<a href='manage.php'><button type='button'> zurück zur Verwaltungsseite </button></a>";
+}
+else if(isset($_POST["delete"]))
+{
+    delete($con);
+    echo "Unternehmensform erfolgreich entfernt";
+    echo "<a href='manage.php'><button type='button'> zurück zur Verwaltungsseite </button></a>";
 }
 
 else {
@@ -41,7 +56,7 @@ else {
     while ($dsatz=mysqli_fetch_assoc($res))
     {   
         echo "<tr>";
-        echo"<td><input type='radio' name='id'".
+        echo"<td><input type='radio' name='auswahl'".
             "value='" .$dsatz["id"] . "'> &nbsp;</td>".
             "<td>". $dsatz["name"] . "&nbsp; </td> "
             ."<td>".$dsatz["short_form"] . "&nbsp; </td> "
@@ -50,9 +65,13 @@ else {
     }
     echo "</table>";
     echo "<p>";
-    echo "<p><input type='submit' name='submit' value='Absenden'></p>";
+    echo "<p><input type='submit' name='submit' value='Bearbeiten'>";
+    echo "<input type='submit' name='delete' value='Löschen'></p>";
+    echo "<p><a href='add.php'><buttton type='button'> eine Rechtsform hinzufügen </button></a></p>";
+    echo "<p><a href='overview.php'><buttton type='button'> Übersicht ansehen </button></a></p>";
 }
 ?>
+<p class="abstand"></p>
 </form>
 <?php
 include "footer.php";
