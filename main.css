@@ -171,6 +171,7 @@ cursor: pointer;
 .daten {
   padding-left: 50px !important;
   padding-top: 50px !important;
+
 }
 #button01{
   height: 70px;
@@ -178,4 +179,12 @@ cursor: pointer;
 }
 .abstand {
   padding-bottom: 110px !important;
+}
+.ausrichtung {
+  border: 3px solid rgba(0,0,0,0.4) !important;
+}
+.ordnung {
+  float: left;
+  justify-content: left;
+  align-items: left;
 }

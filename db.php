@@ -27,7 +27,7 @@ function create_table_if_not_exists(mysqli $con) {
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(30) NOT NULL,
             short_form VARCHAR(30) NOT NULL,
-            description VARCHAR(100) NOT NULL)";
+            description VARCHAR(300) NOT NULL)";
     mysqli_query($con, $sql);
 }
 
@@ -41,10 +41,20 @@ function get_all(mysqli $con) {
     return $res;
 }
 
-function get_single(mysqli $con) {
+function get_single1(mysqli $con) {
     $sql = "SELECT * FROM Unternehmensform WHERE id = "
-    .$_POST["auswahl"];
+    .$_POST["idnr"];
     var_dump($sql);
+    $res = mysqli_query($con, $sql);
+    $dsatz = mysqli_fetch_assoc($res);
+    return $dsatz;
+    // $res = mysqli_query($con, $sql);
+    // $dsatz = mysqli_fetch_assoc($res);
+}
+
+function get_single2(mysqli $con) {
+    $sql = "SELECT * FROM Unternehmensform WHERE id = "
+    .$_GET["idnr"];
     $res = mysqli_query($con, $sql);
     $dsatz = mysqli_fetch_assoc($res);
     return $dsatz;
@@ -54,7 +64,7 @@ function get_single(mysqli $con) {
 
 function delete(mysqli $con) {
     $sql = "DELETE FROM Unternehmensform WHERE id = "
-    ."'".$_POST["auswahl"]."'";
+    ."'".$_POST["idnr"]."'";
     var_dump($sql);
     mysqli_query($con,$sql);
 

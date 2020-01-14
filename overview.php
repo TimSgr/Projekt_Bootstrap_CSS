@@ -10,12 +10,13 @@ include "header.php";
     $res = get_all($con);
     while ($dsatz=mysqli_fetch_assoc($res))
     {
+        $idnr = $dsatz['id'];
 
 ?>
 
 <div class='row d-flex unternehmensform'>
     <div class='d-flex justify-content-center align-items-center circle order-0 col-md-4'>
-    <a href="singleview.php"><div class="dot"> <?php echo $dsatz["short_form"]?></div></a>
+    <a href="singleview.php?idnr=<?php echo $idnr;?>"><div class="dot"> <?php echo $dsatz["short_form"]?></div></a>
     </div>
     <div class="description order-1 col-8 text01">
         <p class='font-weight-bold'> <?php echo $dsatz["name"]?> </p>

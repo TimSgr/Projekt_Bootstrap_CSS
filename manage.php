@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-
-<?php
-include "header.php";
-?>
 <?php
 include "db.php";
 $con = create_db_connection();
 create_db_if_not_exists($con);
 create_table_if_not_exists($con);
+
+include "header.php";
 ?>
-</head>
-<body>
+
 <form action="manage.php" method="post">    
 <?php
 if(isset($_POST["submit"])) {
 
-   get_single($con);
-   $dsatz=get_single($con);
+   get_single1($con);
+   $dsatz=get_single1($con);
    echo "<br><input name='id' value='" .$dsatz["id"].
    "'> ID <br> ";
    echo "<br><input name='na' value='" .$dsatz["name"].
@@ -29,7 +22,7 @@ if(isset($_POST["submit"])) {
     echo "<br><input name='des' value='" .$dsatz["description"].
     "'> Beschreibung <br> ";
     echo "<br><input type='hidden' name ='selected' value='" 
-    . $_POST["auswahl"] . "'> ";
+    . $_POST["idnr"] . "'> ";
     echo "<input type='submit' value='speichern' name='speichern'>";
     echo "<input type='reset'><br>";
 }
@@ -56,7 +49,7 @@ else {
     while ($dsatz=mysqli_fetch_assoc($res))
     {   
         echo "<tr>";
-        echo"<td><input type='radio' name='auswahl'".
+        echo"<td><input type='radio' name='idnr'".
             "value='" .$dsatz["id"] . "'> &nbsp;</td>".
             "<td>". $dsatz["name"] . "&nbsp; </td> "
             ."<td>".$dsatz["short_form"] . "&nbsp; </td> "

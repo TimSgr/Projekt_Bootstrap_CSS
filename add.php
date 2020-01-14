@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-
 <?php
 include "db.php";
 
@@ -18,30 +13,46 @@ if(isset($_POST['submit'])) {
 }
 ?>
 
-</head>
-<body>
-
 <?php
 include "header.php";
 ?>
 <form action="add.php" method="post">
-<div class="daten">
-    <p> Voller Name der Rechtsform </p>
-    <p>
-        <input type="text" maxlength="30" placeholder="Bitte Rechtsform eingeben" id="name" name="name">
-    </p>
-    <p> Abkürzung (z.b. AG, GmbH, etc) </p>
-    <p>
-        <input type="text" maxlength="7" placeholder="Bitte Abkürzung eingeben" id="short_form" name="short_form">
-    </p>
-    <p> Beschreibung der Unternehmensform </p>
-    <p> 
-        <textarea id="description" name="description" placeholder="Bitte Beschreibung einfügen" cols="40" rows="10"></textarea>
-    <p>
-    <input type="submit" value="absenden" name="submit">
-    <a href="manage.php">
-        <button type="button" id="button01"> Hinzugefügte Rechtsformen ansehen</button>
-    </a>
+<div class='row d-flex '>
+    <div class="d-flex justify-content-center col-md-4 ausrichtung">
+        <p> Voller Name der Rechtsform &nbsp; </p>
+    </div>
+    <div class="d-flex justify-content-center col-md-8 ausrichtung ordnung">
+        <p>    
+            <input type="text" maxlength="30" placeholder="Bitte Rechtsform eingeben" id="name" name="name">
+        </p>
+    </div>
+</div>
+<div class='row d-flex'>
+    <div class="d-flex justify-content-center col-md-4 ausrichtung">
+        <p> Abkürzung (z.b. AG, GmbH, etc) &nbsp;</p>
+    </div>
+    <div class="d-flex justify-content-center col-md-8 ausrichtung ordnung">
+        <p>
+            <input type="text" maxlength="7" placeholder="Bitte Abkürzung eingeben" id="short_form" name="short_form">
+        </p>
+    </div>
+</div>
+<div class='row d-flex'>
+    <div class="d-flex justify-content-center col-md-4 ausrichtung">   
+        <p> Beschreibung der Unternehmensform &nbsp; </p>
+    </div>
+    <div class="d-flex justify-content-center col-md-8 ausrichtung ordnung">   
+            <textarea id="description" name="description" placeholder="Bitte Beschreibung einfügen" cols="40" rows="10"></textarea>
+    </div>
+</div>
+<p>
+    <div class="d-flex justify-content-center">
+        <p>
+        <input type="submit" value="absenden" name="submit">
+        <a href="manage.php">
+            <button type="button" id="button01"> Hinzugefügte Rechtsformen ansehen</button>
+        </a>
+    </div>
 </div>
 </form>
 
