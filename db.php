@@ -53,7 +53,6 @@ function get_single(mysqli $con) {
 }
 
 function delete(mysqli $con) {
-
     $sql = "DELETE FROM Unternehmensform WHERE id = "
     ."'".$_POST["auswahl"]."'";
     var_dump($sql);
@@ -62,20 +61,17 @@ function delete(mysqli $con) {
 }
 
 function update(mysqli $con, $na, $abk, $des, $id, $selected) {
-
     $sql = "UPDATE Unternehmensform SET id = '$id', name= '$na' , ".
     "short_form= '$abk', description='$des'".
     "WHERE id = '$selected'";
     var_dump($sql);
     mysqli_query($con,$sql);
-
 }
 
 function add(mysqli $con, $name, $short_form, $description) {
     $sql = "INSERT INTO Unternehmensform (id, name, short_form, description)"
     . " VALUES('$name', '$short_form', '$description')";
     mysqli_query($con, $sql);
-
     $num = mysqli_affected_rows($con);
     if ($num>0)
     {
@@ -90,12 +86,5 @@ function add(mysqli $con, $name, $short_form, $description) {
         echo "Es ist kein Datensatz hinzugekommen";
         echo "</font><br>";
     }
-
-
-
 } 
-// // run functions
-// create_db_connection();
-// create_db_if_not_exists($con);
-// create_table_if_not_exists();
 ?>
