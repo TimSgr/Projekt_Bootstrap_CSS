@@ -81,7 +81,7 @@ body {
 
   .trennung {
     margin-bottom: 70px !important;
-    border: 3px solid rgba(0,0,0,0.4);
+    /* border: 3px solid rgba(0,0,0,0.4); */
   }
 
   .trennung:last-of-type {
@@ -118,6 +118,10 @@ body {
 
   .erfolg {
     color: rgb(2, 149, 2);
+  }
+
+  .space {
+    padding-top: 30px;
   }
 
 footer {

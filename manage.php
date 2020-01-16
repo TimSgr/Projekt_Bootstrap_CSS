@@ -26,6 +26,7 @@ if(isset($_POST["submit"])) {
     echo "<input type='submit' value='speichern' name='speichern'>";
     echo "<input type='reset'><br>";
 }
+
 else if(isset($_POST["speichern"]))
 {
     $na = $_POST["na"];
@@ -36,6 +37,7 @@ else if(isset($_POST["speichern"]))
     update($con, $na, $abk, $des,$id, $selected);
     echo "<a href='manage.php'><button type='button'> zurück zur Verwaltungsseite </button></a>";
 }
+
 else if(isset($_POST["delete"]))
 {
     delete($con);

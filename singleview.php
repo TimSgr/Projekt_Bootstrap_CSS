@@ -16,7 +16,7 @@ include "header.php";
     get_single2($con);
     $dsatz = get_single2($con);
 ?>
-    <div class="container trennung">
+<div class="container trennung">
     <div class="row d-flex unternehmensform">
         <div class="d-flex justify-content-center align-items-center circle order-0 col-4">
             <div class="dot"><?php echo $dsatz['short_form'];?></div>
@@ -27,7 +27,6 @@ include "header.php";
         </div>   
     </div>
 </div>
-
 
 <?php
 include "footer.php";
