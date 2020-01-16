@@ -85,16 +85,16 @@ function add(mysqli $con, $name, $short_form, $description) {
     $num = mysqli_affected_rows($con);
     if ($num>0)
     {
-        echo "<font color='#00aa00'>";
+        echo "<div class='erfolg'>";
         echo "Ein Datensatz hinzugekommen";
-        echo "</font><br>";
+        echo "</div><br>";
     }
     else 
     {
-        echo "<font color='#ff0000'>";
+        echo "<div class='fehler'>";
         echo "Es ist ein Fehler augetreten, ";
         echo "Es ist kein Datensatz hinzugekommen";
-        echo "</font><br>";
+        echo "</div><br>";
     }
 } 
 ?>
