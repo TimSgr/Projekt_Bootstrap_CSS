@@ -6,12 +6,15 @@ create_table_if_not_exists($con);
 
 include "header.php";
 
-    if(isset($_GET['idnr'])){
+    if(isset($_GET['idnr']))
+    {
         $id = $_GET['idnr'];
         echo $id;
-      } else {
+    } 
+    else 
+    {
         echo "failed";
-      }
+    }
     
     get_single2($con);
     $dsatz = get_single2($con);
