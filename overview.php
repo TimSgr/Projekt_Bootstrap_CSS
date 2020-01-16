@@ -1,8 +1,6 @@
 <?php
 include "header.php";
-?>
 
-<?php 
     include "db.php";
     $con = create_db_connection();
     create_db_if_not_exists($con);
@@ -26,7 +24,7 @@ include "header.php";
 </div>
          
 <?php
-}
+    }
 ?>
 
 <div class="d-flex justify-content-center">
@@ -39,8 +37,10 @@ include "header.php";
             <button type="button" class="btn btn-info"> Zur Verwaltungsansicht </button>
         </a>
 </div>
+
 <?php
 include "footer.php";
 ?>
+
 </body>
 </html>
