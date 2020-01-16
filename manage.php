@@ -38,26 +38,29 @@ else if(isset($_POST["speichern"]))
     echo "<a href='manage.php'><button type='button'> zurück zur Verwaltungsseite </button></a>";
 }
 
-else if(isset($_POST["delete"]))
+else if(isset($_POST["delete"])) 
 {
     delete($con);
     echo "Unternehmensform erfolgreich entfernt";
     echo "<a href='manage.php'><button type='button'> zurück zur Verwaltungsseite </button></a>";
 }
 
-else {
+else 
+{
     $res=get_all($con);
     echo "<table border='1'>";
+    
     while ($dsatz=mysqli_fetch_assoc($res))
     {   
         echo "<tr>";
         echo"<td><input type='radio' name='idnr'".
             "value='" .$dsatz["id"] . "'> &nbsp;</td>".
-            "<td>". $dsatz["name"] . "&nbsp; </td> "
-            ."<td>".$dsatz["short_form"] . "&nbsp; </td> "
-            ."<td>".$dsatz["description"] . "&nbsp; </td> "
-            ."</tr>";
+            "<td>". $dsatz["name"] . "&nbsp; </td>".
+            "<td>".$dsatz["short_form"] . "&nbsp; </td>".
+            "<td>".$dsatz["description"] . "&nbsp; </td>".
+            "</tr>";
     }
+
     echo "</table>";
     echo "<p>";
     echo "<p><input type='submit' name='submit' value='Bearbeiten'>";
