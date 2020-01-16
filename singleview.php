@@ -22,11 +22,15 @@ include "header.php";
 <div class="container trennung">
     <div class="row d-flex unternehmensform">
         <div class="d-flex justify-content-center align-items-center circle order-0 col-4">
-            <div class="dot"><?php echo $dsatz['short_form'];?></div>
+            <div class="dot">
+                <?php echo $dsatz['short_form'];?>
+            </div>
         </div>
         <div class="description order-1 col-8">
-            <p><?php echo $dsatz['name'];?></p>
-            <?php echo $dsatz['description'];?>
+            <p>
+                <?php echo $dsatz['name'];?>
+            </p>
+                <?php echo $dsatz['description'];?>
         </div>   
     </div>
 </div>
