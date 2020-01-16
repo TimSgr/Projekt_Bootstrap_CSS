@@ -60,7 +60,7 @@ body {
   .unternehmensform {
     margin-top: 50px;
     margin-bottom: 120px;
-    border: 3px solid rgba(0,0,0,0.4);
+    /* border: 3px solid rgba(0,0,0,0.4); */
   }
 
   .unternehmensform:last-of-type {
@@ -102,9 +102,9 @@ body {
     padding-bottom: 110px !important;
   }
   
-  .ausrichtung {
+  /* .ausrichtung {
     border: 3px solid rgba(0,0,0,0.4) !important;
-  }
+  } */
 
   .ordnung {
     float: left;
