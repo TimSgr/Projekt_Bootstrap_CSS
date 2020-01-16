@@ -79,7 +79,7 @@ function update(mysqli $con, $na, $abk, $des, $id, $selected) {
 }
 
 function add(mysqli $con, $name, $short_form, $description) {
-    $sql = "INSERT INTO Unternehmensform (id, name, short_form, description)"
+    $sql = "INSERT INTO Unternehmensform (name, short_form, description)"
     . " VALUES('$name', '$short_form', '$description')";
     mysqli_query($con, $sql);
     $num = mysqli_affected_rows($con);
