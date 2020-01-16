@@ -6,24 +6,47 @@ include "header.php";
     create_db_if_not_exists($con);
     create_table_if_not_exists($con);
     $res = get_all($con);
+    $i=0;
     while ($dsatz=mysqli_fetch_assoc($res))
     {
+        $i++;
+        $class = $i%2 === 0? "reversed" : "";
         $idnr = $dsatz['id'];
+        if($class=="reversed")
+        {
 ?>
 
-<div class='row d-flex unternehmensform'>
-    <div class='d-flex justify-content-center align-items-center circle order-0 col-md-4'>
+
+<div class='row d-flex unternehmensform <?php echo $class; ?> seitenabstand'>
+    <div class='d-flex justify-content-center align-items-center circle order-0 col-md-4 seitenabstand'>
         <a href="singleview.php?idnr=<?php echo $idnr;?>">
             <div class="dot"> <?php echo $dsatz["short_form"]?></div>
         </a>
     </div>
     <div class="description order-1 col-8 text01">
-        <p class='font-weight-bold'> <?php echo $dsatz["name"]?> </p>
+        <p class='font-weight-bold seitenabstand'> <?php echo $dsatz["name"]?> </p>
             <?php echo $dsatz["description"] ?>
     </div>   
 </div>
          
 <?php
+        } else
+            {
+?>
+<div class="row d-flex unternehmensform flex-column-reverse flex-lg-row <?php echo $class; ?>">
+    <div class="d-flex justify-content-center align-items-center circle order-1 col-md-4 col-md-12 col-lg-6 col-xl-5">
+        <a href="singleview.php?idnr=<?php echo $idnr;?>">
+            <div class="dot"> <?php echo $dsatz["short_form"]?></div>
+        </a>
+    </div>        
+    <div class="description order-0 col-8 col-md-12 col-lg-6 col-xl-7 text01">
+        <p class='font-weight-bold'> <?php echo $dsatz["name"]?> </p>
+            <?php echo $dsatz["description"] ?>
+    </div>   
+</div>
+
+<?php
+            }
     }
 ?>
 

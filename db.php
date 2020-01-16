@@ -21,7 +21,6 @@ function create_db_if_not_exists(mysqli $con) {
     mysqli_query($con, $sql);
 }
 
-
 function create_table_if_not_exists(mysqli $con) {
     $sql = "CREATE TABLE IF NOT EXISTS Unternehmensform (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
