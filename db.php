@@ -48,8 +48,6 @@ function get_single1(mysqli $con) {
     $res = mysqli_query($con, $sql);
     $dsatz = mysqli_fetch_assoc($res);
     return $dsatz;
-    // $res = mysqli_query($con, $sql);
-    // $dsatz = mysqli_fetch_assoc($res);
 }
 
 function get_single2(mysqli $con) {
@@ -58,8 +56,6 @@ function get_single2(mysqli $con) {
     $res = mysqli_query($con, $sql);
     $dsatz = mysqli_fetch_assoc($res);
     return $dsatz;
-    // $res = mysqli_query($con, $sql);
-    // $dsatz = mysqli_fetch_assoc($res);
 }
 
 function delete(mysqli $con) {
@@ -67,7 +63,6 @@ function delete(mysqli $con) {
     ."'".$_POST["idnr"]."'";
     var_dump($sql);
     mysqli_query($con,$sql);
-
 }
 
 function update(mysqli $con, $na, $abk, $des, $id, $selected) {
