@@ -79,22 +79,31 @@ function update(mysqli $con, $na, $abk, $des, $id, $selected) {
 }
 
 function add(mysqli $con, $name, $short_form, $description) {
-    $sql = "INSERT INTO Unternehmensform (name, short_form, description)"
-    . " VALUES('$name', '$short_form', '$description')";
-    mysqli_query($con, $sql);
-    $num = mysqli_affected_rows($con);
-    if ($num>0)
-    {
-        echo "<div class='erfolg'>";
-        echo "Ein Datensatz hinzugekommen";
-        echo "</div><br>";
-    }
-    else 
+    if(empty($name) || empty($short_form) || empty($description))
     {
         echo "<div class='fehler'>";
-        echo "Es ist ein Fehler augetreten, ";
-        echo "Es ist kein Datensatz hinzugekommen";
-        echo "</div><br>";
+        echo "Bitte in alle Textfelder Werte eintragen.";
+        echo "</div>";
+    }
+    else
+    {
+        $sql = "INSERT INTO Unternehmensform (name, short_form, description)"
+        . " VALUES('$name', '$short_form', '$description')";
+        mysqli_query($con, $sql);
+        $num = mysqli_affected_rows($con);
+        if ($num>0)
+        {
+            echo "<div class='erfolg'>";
+            echo "Ein Datensatz hinzugekommen";
+            echo "</div><br>";
+        }
+        else 
+        {
+            echo "<div class='fehler'>";
+            echo "Es ist ein Fehler augetreten, ";
+            echo "Es ist kein Datensatz hinzugekommen";
+            echo "</div><br>";
+        }
     }
 } 
 ?>
