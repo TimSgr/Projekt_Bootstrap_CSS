@@ -130,37 +130,32 @@ body {
 
   }
 
-  table {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 80%;
+  .flex-container {
+    display: flex;
+    align-content: center;
+  }
+  
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    width: 800px;
+    margin: 1px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
   }
 
-  table caption {
-    font-size: 1.5em;
-    margin: .5em 0 .75em;
-  }
-
-  table tr {
-    border: 1px solid #ddd;
-    padding: .35em;
-  }
-
-  table tr:nth-child(even) {
-    background: #f8f8f8;  
-  }
-
-  table td {
+  .button1 {
+    margin-left: 5px;
+    height: 40px;
     text-align: center;
   }
 
-  table td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
 footer {
   background-color: black;
   color: white;

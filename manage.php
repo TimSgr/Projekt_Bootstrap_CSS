@@ -48,26 +48,25 @@ else if(isset($_POST["delete"]))
 else 
 {
     $res=get_all($con);
-    echo "<table border='1' class='table table-striped'>";
-    
+    echo "<div class='container'>";
     while ($dsatz=mysqli_fetch_assoc($res))
     {   
-        echo "<tr>";
-        echo"<td scope='row'><input type='radio' name='idnr'".
-            "value='" .$dsatz["id"] . "'> &nbsp;</td>".
-            "<td>". $dsatz["name"] . "&nbsp; </td>".
-            "<td>".$dsatz["short_form"] . "&nbsp; </td>".
-            "<td>".$dsatz["description"] . "&nbsp; </td>".
-            "</tr>";
+        echo "<div class='flex-container'>";
+            echo"<div><input type='radio' name='idnr'".
+                "value='" .$dsatz["id"] . "'> &nbsp;</div>".
+                "<div>". $dsatz["name"] . "&nbsp; </div>".
+                "<div>".$dsatz["short_form"] . "&nbsp; </div>".
+                "<div>".$dsatz["description"] . "&nbsp; </div>";
+        echo "</div>";
     }
-
-    echo "</table>";
     echo "</div>";
     echo "<p>";
+    echo "<div class=' d-flex justify-content-center'>";
     echo "<p><input type='submit' name='submit' value='Bearbeiten'>";
     echo "<input type='submit' name='delete' value='Löschen'></p>";
-    echo "<p><a href='add.php'><buttton type='button'> eine Rechtsform hinzufügen </button></a></p>";
-    echo "<p><a href='overview.php'><buttton type='button'> Übersicht ansehen </button></a></p>";
+    echo "<p><a href='add.php'><buttton type='button' class='button1'> &nbsp; eine Rechtsform hinzufügen &nbsp; </button></a></p>";
+    echo "<p><a href='overview.php'><buttton type='button' class='button1'> &nbsp; Übersicht ansehen &nbsp; </button></a></p>";
+    echo "</div>";
 }
 ?>
 <p class="abstand"></p>
