@@ -19,8 +19,8 @@ if(isset($_POST["submit"])) {
    "'> Name der Rechtsform <br> ";
     echo "<br><input name='abk' value='" .$dsatz["short_form"].
     "'> Abkürzung <br> ";
-    echo "<br><input name='des' value='" .$dsatz["description"].
-    "'> Beschreibung <br> ";
+    echo "<br><textarea name='des' id='des' >".$dsatz["description"].
+    " </textarea> Beschreibung <br> ";
     echo "<br><input type='hidden' name ='selected' value='" 
     . $_POST["idnr"] . "'> ";
     echo "<input type='submit' value='speichern' name='speichern'>";
@@ -48,12 +48,12 @@ else if(isset($_POST["delete"]))
 else 
 {
     $res=get_all($con);
-    echo "<table border='1'>";
+    echo "<table border='1' class='table table-striped'>";
     
     while ($dsatz=mysqli_fetch_assoc($res))
     {   
         echo "<tr>";
-        echo"<td><input type='radio' name='idnr'".
+        echo"<td scope='row'><input type='radio' name='idnr'".
             "value='" .$dsatz["id"] . "'> &nbsp;</td>".
             "<td>". $dsatz["name"] . "&nbsp; </td>".
             "<td>".$dsatz["short_form"] . "&nbsp; </td>".
@@ -62,6 +62,7 @@ else
     }
 
     echo "</table>";
+    echo "</div>";
     echo "<p>";
     echo "<p><input type='submit' name='submit' value='Bearbeiten'>";
     echo "<input type='submit' name='delete' value='Löschen'></p>";
