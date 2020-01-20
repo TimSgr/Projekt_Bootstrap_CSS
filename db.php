@@ -34,24 +34,21 @@ function get_all(mysqli $con) {
     $res = mysqli_query($con,"SELECT * FROM Unternehmensform");
     $num = mysqli_num_rows($res);
     if($num > 0) {
-        echo "Folgende Datensätze wurden gefunden: <br>";
+        echo "<div class='zentrieren'>";
+        echo " &nbsp; Folgende Datensätze wurden gefunden: <br>";
+        echo "</div>";
     }
-    else echo "Keine Datensätze gefunden <br>";
+    else {
+        echo "<div class='zentrieren'>";  
+        echo " &nbsp; Keine Datensätze gefunden <br>";
+        echo "</div>";
+    } 
     return $res;
 }
 
-function get_single1(mysqli $con) {
+function get_single(mysqli $con, int $id) {
     $sql = "SELECT * FROM Unternehmensform WHERE id = "
-    .$_POST["idnr"];
-    var_dump($sql);
-    $res = mysqli_query($con, $sql);
-    $dsatz = mysqli_fetch_assoc($res);
-    return $dsatz;
-}
-
-function get_single2(mysqli $con) {
-    $sql = "SELECT * FROM Unternehmensform WHERE id = "
-    .$_GET["idnr"];
+    .$id;
     $res = mysqli_query($con, $sql);
     $dsatz = mysqli_fetch_assoc($res);
     return $dsatz;

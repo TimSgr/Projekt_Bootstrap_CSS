@@ -6,18 +6,17 @@ create_table_if_not_exists($con);
 
 include "header.php";
 
-    if(isset($_GET['idnr']))
-    {
-        $id = $_GET['idnr'];
-        echo $id;
-    } 
-    else 
-    {
-        echo "failed";
-    }
-    
-    get_single2($con);
-    $dsatz = get_single2($con);
+if(isset($_GET['idnr']))
+{
+    $id = $_GET['idnr'];
+    echo $id;
+} 
+else 
+{
+    echo "failed";
+}
+
+    $dsatz = get_single($con, intval($_GET["idnr"]));
 ?>
 <div class="container trennung">
     <div class="row d-flex unternehmensform">

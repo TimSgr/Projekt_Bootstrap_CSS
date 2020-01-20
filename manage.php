@@ -9,22 +9,24 @@ include "header.php";
 
 <form action="manage.php" method="post">    
 <?php
+
 if(isset($_POST["submit"])) {
 
-   get_single1($con);
-   $dsatz=get_single1($con);
+   $dsatz=get_single($con, intval($_POST["idnr"]));
+   echo "<div class='zentrieren'>";
    echo "<br><input name='id' value='" .$dsatz["id"].
-   "'> ID <br> ";
+   "'> <p>ID <br> ";
    echo "<br><input name='na' value='" .$dsatz["name"].
-   "'> Name der Rechtsform <br> ";
+   "'> <p>Name der Rechtsform <br> ";
     echo "<br><input name='abk' value='" .$dsatz["short_form"].
-    "'> Abkürzung <br> ";
-    echo "<br><textarea name='des' id='des' >".$dsatz["description"].
-    " </textarea> Beschreibung <br> ";
+    "'><p> Abkürzung <br> ";
+    echo "<br><textarea name='des' id='des' cols='21' rows='5'>".$dsatz["description"].
+    " </textarea> <p> Beschreibung <br> ";
     echo "<br><input type='hidden' name ='selected' value='" 
     . $_POST["idnr"] . "'> ";
     echo "<input type='submit' value='speichern' name='speichern'>";
     echo "<input type='reset'><br>";
+    echo "</div>";
 }
 
 else if(isset($_POST["speichern"]))
