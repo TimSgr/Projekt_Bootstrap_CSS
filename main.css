@@ -110,10 +110,12 @@ body {
   }
 
   .fehler {
+    text-align: center;
     color: rgb(233, 50, 50);
   }
 
   .erfolg {
+    text-align: center;
     color: rgb(2, 149, 2);
   }
 

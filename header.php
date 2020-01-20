@@ -9,10 +9,19 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<header> 
-    <a href="#">
-        Start
-    </a>  
+<header>
+    <div class="row"> 
+        <div class="col-6 zentrieren">
+            <a id="link" href="#">
+                Learn Bootstrap
+            </a>
+        </div>
+        <div class="col-6 zentrieren">
+            <a id="link" href="#">
+                Start
+            </a>  
+        </div>
+    </div>
 </header>
 <div class = "start">   
     <h1> This Is A Page About</h1>
