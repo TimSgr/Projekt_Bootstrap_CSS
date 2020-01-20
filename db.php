@@ -57,7 +57,6 @@ function get_single(mysqli $con, int $id) {
 function delete(mysqli $con) {
     $sql = "DELETE FROM Unternehmensform WHERE id = "
     ."'".$_POST["idnr"]."'";
-    var_dump($sql);
     mysqli_query($con,$sql);
 }
 
@@ -65,7 +64,6 @@ function update(mysqli $con, $na, $abk, $des, $id, $selected) {
     $sql = "UPDATE Unternehmensform SET id = '$id', name= '$na' , ".
     "short_form= '$abk', description='$des'".
     "WHERE id = '$selected'";
-    var_dump($sql);
     mysqli_query($con,$sql);
 }
 

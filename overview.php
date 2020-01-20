@@ -49,15 +49,17 @@ include "header.php";
     }
 ?>
 
-<div class="d-flex justify-content-center">
-    <a href="add.php">
-        <button type="button" class="btn btn-info">Eigene Unternehmensform hinzufügen</button>
-    </a>
-</div>
-<div class="d-flex justify-content-center space">
-    <a href="manage.php">
-        <button type="button" class="btn btn-info">Zur Verwaltungsansicht</button>
-    </a>
+<div class='abstand oben'>
+    <div class="d-flex justify-content-center space">
+        <a href="add.php">
+            <button type="button" class="btn btn-info">Eigene Unternehmensform hinzufügen</button>
+        </a>
+    </div>
+    <div class="d-flex justify-content-center space">
+        <a href="manage.php">
+            <button type="button" class="btn btn-info">Zur Verwaltungsansicht</button>
+        </a>
+    </div>
 </div>
 
 <?php include "footer.php"; ?>

@@ -37,14 +37,19 @@ else if(isset($_POST["speichern"]))
     $id = $_POST["id"];
     $selected = $_POST["selected"];
     update($con, $na, $abk, $des,$id, $selected);
-    echo "<a href='manage.php'><button type='button'> zurück zur Verwaltungsseite </button></a>";
+    echo "<div class='zentrieren oben'>";
+    echo "Änderungen übernommen";
+    echo "<br><a href='manage.php'><button type='button'> zurück zur Verwaltungsseite </button></a>";
+    echo "</div>";
 }
 
 else if(isset($_POST["delete"])) 
 {
     delete($con);
+    echo "<div class='zentrieren'>";
     echo "Unternehmensform erfolgreich entfernt";
     echo "<a href='manage.php'><button type='button'> zurück zur Verwaltungsseite </button></a>";
+    echo "</div>";
 }
 
 else 
