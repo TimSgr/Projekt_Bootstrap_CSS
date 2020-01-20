@@ -13,6 +13,7 @@ include "header.php";
 if(isset($_POST["submit"])) {
 
    $dsatz=get_single($con, intval($_POST["idnr"]));
+   
    echo "<div class='zentrieren'>";
    echo "<br><input name='id' value='" .$dsatz["id"].
    "'> <p>ID <br> ";
